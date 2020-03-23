@@ -19,6 +19,8 @@
   #COMMIT#####
   c = commit
   ca = commit --amend
+  #DIFF######
+  df = "!f(){ git diff \"$1~\" \"$1\"; };f"
   #LOG########
   lg = log --no-merges --oneline
   last = log -1
