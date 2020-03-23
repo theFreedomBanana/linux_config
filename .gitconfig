@@ -1,0 +1,111 @@
+
+[alias]
+  #ADD########
+  a = add
+  aa = add -A
+  an = add .
+  au = add -u #update the index but doesn't add new file
+  #BRANCH#####
+  br = branch
+  brm = branch --merged
+  brnm = --no-merged
+  brd = branch -d
+  brdo = branch -d --old-merged-feature
+  #CHECKOUT###
+  co = checkout #takes either a commit hash or a file argument. If argument is a commit detach HEAD to the passed commit, if argument is a file reset all changes in it
+  cob = checkout -b
+  #CLEAN###### Cleans the working tree by recursively removing files that are not under version control
+  cl = clean -f #force removing file(s) from project
+  #COMMIT#####
+  c = commit
+  ca = commit --amend
+  #LOG########
+  lg = log --no-merges --oneline
+  last = log -1
+  lgg = log --oneline --graph
+  lgaf = log --no-merges --after #takes a date argument in the shape of "yyyy-mm-dd" (ex: g lgaf 2017-07-04)
+  lgau = log --no-merges --author -i #takes a case insensitive name argument (ex: g lgau="henrik perrochon")
+  lggr = log --no-merges --grep #takes a message argument (ex: g lggr="a text to search in commits")
+  lgbf = log --no-merges --before
+  lgf = log --oneline --follow
+  lgss = log --no-merges -S #takes a string param and return all commits in which this string was introduced into project
+  lgsg = log --no-merges -G #takes a regex param and return all commits in which was introduced lines that match regex
+  rlg = reflog
+  slg = shortlog
+  slgaf = shortlog --after
+  whatadded = log --diff-filter=A
+  #PRUNE######
+  fp = fetch --prune
+  #REBASE#####
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = rebase --interactive
+  rbs = rebase --skip
+  #RESET######
+  rs = reset #takes a file as an argument - remove every files/argument file from stage
+  rsh = reset --hard #takes a commit hash argument - move HEAD to the passed commit
+  rss = reset --soft #takes a commit hash argument - move HEAD to the passed commit but keep in stage all modifications
+  #REV-PARSE##
+	gdir = rev-parse --git-dir
+	iigd = rev-parse --is-inside-git-dir
+	iiwt = rev-parse --is-inside-work-tree
+	rpb = rev-parse --branch #takes a branch name as an argument. Print SHA1 branch hash
+	rpbs = rev-parse --branches
+	#REVERT#####
+  rv = revert #takes a hash commit argument
+  #STASH######
+  sh = stash
+  shl = stash list
+  sha = stash apply
+  sha0 = stash apply stash@{0}
+  sha1 = stash apply stash@{1}
+  sha2 = stash apply stash@{2}
+  sha3 = stash apply stash@{3}
+  shd = stash drop
+  shd0 = stash drop stash@{0}
+  shd1 = stash drop stash@{1}
+  shd2 = stash drop stash@{2}
+  shd3 = stash drop stash@{3}
+  shs = stash save
+  #STATUS######
+  st = status -s #output status in short format
+  #UPDATE-INDEX#####
+  ignore = update-index --assume-unchanged #works only for tracked files
+	unignore = update-index --no-assume-unchanged
+	ignored = !git ls-files -v | grep "^[[:lower:]]"
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+
+[core]
+	editor = nano #I'm not ashamed
+	whitespace = -indent-with-non-tab,trailing-space
+	excludesfile = ~/.gitignore
+
+[push]
+	default = simple
+
+[user]
+	username = #add your username
+	email = #add your email
+
+[web]
+	browser = google-chrome
