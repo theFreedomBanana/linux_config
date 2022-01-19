@@ -1,4 +1,3 @@
-
 [alias]
   #ADD########
   a = add
@@ -8,9 +7,10 @@
   #BRANCH#####
   br = branch
   brm = branch --merged
-  brnm = --no-merged
+  brnm = branch --no-merged
   brd = branch -d
-  brdo = branch -d --old-merged-feature
+  brdo = branch -d old-merged-feature
+  brr = branch --remote
   #CHECKOUT###
   co = checkout #takes either a commit hash or a file argument. If argument is a commit detach HEAD to the passed commit, if argument is a file reset all changes in it
   cob = checkout -b
@@ -22,16 +22,18 @@
   #DIFF######
   df = "!f(){ git diff \"$1~\" \"$1\"; };f"
   #LOG########
-  lg = log --no-merges --oneline
+  lg = log --oneline
+  lgnm = log --no-merges --oneline 
   last = log -1
   lgg = log --oneline --graph
-  lgaf = log --no-merges --after #takes a date argument in the shape of "yyyy-mm-dd" (ex: g lgaf 2017-07-04)
-  lgau = log --no-merges --author -i #takes a case insensitive name argument (ex: g lgau="henrik perrochon")
-  lggr = log --no-merges --grep #takes a message argument (ex: g lggr="a text to search in commits")
+  lgaf = log --after #takes a date argument in the shape of "yyyy-mm-dd" (ex: g lgaf 2017-07-04)
+  lgau = log --author -i #takes a case insensitive name argument (ex: g lgau="henrik perrochon")
+  lggr = log --grep #takes a message argument (ex: g lggr="a text to search in commits")
   lgbf = log --no-merges --before
-  lgf = log --oneline --follow
-  lgss = log --no-merges -S #takes a string param and return all commits in which this string was introduced into project
-  lgsg = log --no-merges -G #takes a regex param and return all commits in which was introduced lines that match regex
+  lgf = log --oneline --follow #take a file name as a param and return every commit where the given file was edited
+  lgfp = log --oneline --follow -p #take a file name as a param and return every commit where the given file was edited with the diffs
+  lgss = log -S #takes a string param and return all commits in which this string was introduced into project
+  lgsg = log -G #takes a regex param and return all commits in which was introduced lines that match regex
   rlg = reflog
   slg = shortlog
   slgaf = shortlog --after
@@ -44,18 +46,24 @@
   rbc = rebase --continue
   rbi = rebase --interactive
   rbs = rebase --skip
+  #REMOTE#####
+  rp = remote prune
+  rpo = remote prune origin
+  rrm = remote -rm #takes a remote branch name as param (e.g origin/my-feature)
   #RESET######
   rs = reset #takes a file as an argument - remove every files/argument file from stage
   rsh = reset --hard #takes a commit hash argument - move HEAD to the passed commit
   rss = reset --soft #takes a commit hash argument - move HEAD to the passed commit but keep in stage all modifications
   #REV-PARSE##
-	gdir = rev-parse --git-dir
-	iigd = rev-parse --is-inside-git-dir
-	iiwt = rev-parse --is-inside-work-tree
-	rpb = rev-parse --branch #takes a branch name as an argument. Print SHA1 branch hash
-	rpbs = rev-parse --branches
-	#REVERT#####
+  gdir = rev-parse --git-dir
+  iigd = rev-parse --is-inside-git-dir
+  iiwt = rev-parse --is-inside-work-tree
+  rpb = rev-parse --branch #takes a branch name as an argument. Print SHA1 branch hash
+  rpbs = rev-parse --branches
+  #REVERT#####
   rv = revert #takes a hash commit argument
+  #SHOW-REF###
+  srf = show-ref
   #STASH######
   sh = stash
   shl = stash list
@@ -106,8 +114,8 @@
 	default = simple
 
 [user]
-	username = #add your username
-	email = #add your email
+	username = theFreedomBanana
+	email = benjamin.mahmoudi@gmail.com
 
 [web]
 	browser = google-chrome
