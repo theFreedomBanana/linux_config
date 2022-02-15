@@ -100,28 +100,7 @@ export DOCKER_HOST=tcp://localhost:4243
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #aliases
-alias fzrm='fzf | xargs rm -v'
-alias fz='fzf'
-alias ff='fzf'
-alias lsla='ls -la --group-directories-first'
-alias lsl='ls -l --group-directories-first'
-alias lsa='ls -a --group-directories-first'
-alias ls='exa -abghHl --group-directories-first'
-alias psg='ps aux | grep'
-alias npr='npm run'
-alias bu='bundle'
-alias bux='bundle exec'
-alias dcu='docker-compose up'
-alias wh='which'
-alias sudo='sudo '
-alias pyg='cat'
-alias pig='pyg'
-alias g='git'
-alias na='nano'
-alias chrome="google-chrome"
-alias pdf='xdg-open'
-alias mockoon='/opt/Mockoon/app/mockoon-0.4.0-x86_64.AppImage'
-alias untar='tar -xvzf'
+source ./commands_and_aliases.sh
 
 # Add line numbers to Pygmentize output (Perl script)
 cat() {
