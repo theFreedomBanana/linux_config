@@ -1,5 +1,4 @@
 # Add this file to ~/.config/terminator
-# Rename it from 'terminator_config' to 'config'
 
 [global_config]
   suppress_multiple_term_dialog = True
