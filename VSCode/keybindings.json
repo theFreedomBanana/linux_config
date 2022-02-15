@@ -1,0 +1,87 @@
+// Place your key bindings in this file to override the defaults
+[
+	{ "key": "ctrl+k ctrl+a", "command": "editor.foldAll" },
+	{ "key": "ctrl+k ctrl+z", "command": "editor.unfoldAll" },
+	{ "key": "ctrl+k ctrl+e", "command": "editor.fold" },
+	{ "key": "ctrl+k ctrl+r", "command": "editor.unfold" },
+	{
+		"key": "ctrl+shift+b",
+		"command": "workbench.action.toggleActivityBarVisibility"
+	},
+	{
+		"key": "ctrl+shift+2",
+		"command": "workbench.action.editorLayoutTwoColumns"
+	},
+	{
+		"key": "ctrl+k ctrl+i",
+		"command": "editor.debug.action.showDebugHover",
+		"when": "editorTextFocus && inDebugMode"
+	},
+	{
+		"key": "ctrl+shift+a",
+		"command": "-editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+g g",
+		"command": "-workbench.view.scm",
+		"when": "gitlens:enabled && config.gitlens.keymap == 'chorded'"
+	},
+	{
+		"key": "ctrl+shift+a",
+		"command": "workbench.view.extension.atlascode-drawer"
+	},
+	{
+		"key": "ctrl+shift+q",
+		"command": "workbench.action.toggleMultiCursorModifier"
+	},
+	{
+		"key": "ctrl+shift+g ctrl+shift+l",
+		"command": "workbench.view.extension.gitlens"
+	},
+	{
+		"key": "ctrl+k ctrl+=",
+		"command": "editor.foldAllMarkerRegions",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "ctrl+k ctrl+8",
+		"command": "-editor.foldAllMarkerRegions",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "ctrl+shift+g",
+		"command": "workbench.view.scm",
+		"when": "!gitlens:disabled && config.gitlens.keymap == 'chorded'"
+	},
+	{
+		"key": "ctrl+shift+g g",
+		"command": "-workbench.view.scm",
+		"when": "!gitlens:disabled && config.gitlens.keymap == 'chorded'"
+	},
+	{
+		"key": "ctrl+k ctrl+z",
+		"command": "editor.unfoldAll",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+k ctrl+0",
+		"command": "-editor.unfoldAll",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+k ctrl+z",
+		"command": "editor.unfoldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "ctrl+k ctrl+j",
+		"command": "-editor.unfoldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "ctrl+shift+rightArrow",
+		"command": "expandSelection",
+		"when": "editorTextFocus"
+	}
+]
