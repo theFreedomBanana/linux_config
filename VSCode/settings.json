@@ -1,0 +1,44 @@
+{
+    "editor.detectIndentation": false,
+    "files.insertFinalNewline": true,
+    "editor.fontSize": 16,
+    "editor.tabSize": 2,
+    "files.trimTrailingWhitespace": true,
+		"editor.formatOnPaste": true,
+		"editor.snippetSuggestions": "top",
+		"editor.autoClosingQuotes": "always",
+    "editor.minimap.enabled": false,
+		"editor.insertSpaces": false,
+		"workbench.startupEditor": "newUntitledFile",
+		"explorer.autoReveal": false,
+		"workbench.sideBar.location": "right",
+		"javascript.validate.enable": false,
+		"oneDarkPro.editorTheme": "Onedark Pro",
+		"eslint.alwaysShowStatus": true,
+		"files.autoSave": "off",
+		"atlascode.jira.enabled": true,
+		"diffEditor.renderSideBySide": false,
+		"workbench.colorTheme": "One Dark Pro",
+		"editor.renderControlCharacters": false,
+		"javascript.updateImportsOnFileMove.enabled": "always",
+		"json.schemas": [
+			{
+				"name": "vscode-expo-manifest",
+				"url": "file:///home/ben/.config/Code/User/globalStorage/bycedric.vscode-expo/manifest-42.0.0.json",
+				"fileMatch": [
+					"app.json",
+					"app.config.json"
+				]
+			}
+		],
+		"react-native.packager.port": 1900018999,
+		"editor.multiCursorModifier": "ctrlCmd",
+		"atlascode.bitbucket.pipelines.monitorEnabled": true,
+		"atlascode.bitbucket.pipelines.refreshInterval": 5,
+		"atlascode.bitbucket.explorer.notifications.pullRequestCreated": true,
+		"atlascode.bitbucket.explorer.enabled": true,
+		"atlascode.bitbucket.pipelines.explorerEnabled": true,
+		"atlascode.bitbucket.pipelines.hideFiltered": true,
+		"atlascode.bitbucket.pipelines.hideEmpty": true,
+		"typescript.updateImportsOnFileMove.enabled": "always"
+}
