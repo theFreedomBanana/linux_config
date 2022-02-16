@@ -100,6 +100,7 @@ curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
 apt-get install slack -y
 apt install vlc -y
 apt-get install -y vokoscreen
+apt install virtualbox virtualbox-ext-pack -y
 addCustomConfig
 installMatchaThemes
 installFzf
@@ -109,3 +110,4 @@ installChrome
 installZoom
 installDiscord
 installVscode
+installVirtualBox
