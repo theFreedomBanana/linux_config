@@ -87,6 +87,11 @@ installDiscord() {
 	gdebi ./discord.deb
 }
 
+updateGnomeDock()
+	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'thunderbird.desktop', 'slack.desktop', 'code.desktop', 'terminator.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'htop.desktop', 'org.gnome.tweaks.desktop', 'vokoscreen.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
+	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position RIGHT
+}
+
 cd $(echo $(mktemp -d))
 apt update
 apt upgrade
@@ -111,3 +116,4 @@ installZoom
 installDiscord
 installVscode
 installVirtualBox
+updateGnomeDock
