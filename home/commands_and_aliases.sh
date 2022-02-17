@@ -19,6 +19,7 @@
 # popd: navigates to the previous address and so on.
 # locate: finds file argument location on the computer. Uses a database updated once a day. In order to manually update it check the following command
 # sudo updatedb: update locate database
+# dirname: return the current parent's directory address
 
 # ====================
 # SEARCH & HELP
@@ -43,6 +44,7 @@
 # ====================
 # USERS
 # ====================
+# whoami: returns the current user
 # su: become the user passed as parameter
 # users: output names of the existing users on the computer
 # id: outputs a bunch of infos related to the current user
