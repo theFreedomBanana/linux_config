@@ -123,6 +123,11 @@ installVlc() {
 	apt install vlc -y
 }
 
+installVokoscreen() {
+	echo "About to install Vokoscreen"
+	apt-get install -y vokoscreen
+}
+
 updateGnomeDock() {
 	echo "About to add favorite in Gnome Dock"
 	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'thunderbird.desktop', 'slack.desktop', 'code.desktop', 'terminator.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'htop.desktop', 'org.gnome.tweaks.desktop', 'vokoscreen.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
@@ -141,7 +146,7 @@ apt install zsh -y
 curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
 installSlack
 installVlc
-apt-get install -y vokoscreen
+installVokoscreen
 apt install virtualbox virtualbox-ext-pack -y
 addCustomConfig
 installMatchaThemes
