@@ -103,6 +103,11 @@ installCurl() {
 	apt install curl -y
 }
 
+installWget() {
+	echo "About to install wget"
+	apt install wget -y
+}
+
 updateGnomeDock() {
 	echo "About to add favorite in Gnome Dock"
 	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'thunderbird.desktop', 'slack.desktop', 'code.desktop', 'terminator.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'htop.desktop', 'org.gnome.tweaks.desktop', 'vokoscreen.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
@@ -113,7 +118,7 @@ cd $(echo $(mktemp -d))
 apt update
 apt upgrade
 installCurl
-apt install wget -y
+installWget
 apt install fetch -y
 generateSshKey
 apt install git -y
