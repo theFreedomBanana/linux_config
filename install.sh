@@ -108,6 +108,11 @@ installWget() {
 	apt install wget -y
 }
 
+installFetch() {
+	echo "About to install fetch"
+	apt install fetch -y
+}
+
 updateGnomeDock() {
 	echo "About to add favorite in Gnome Dock"
 	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'thunderbird.desktop', 'slack.desktop', 'code.desktop', 'terminator.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'htop.desktop', 'org.gnome.tweaks.desktop', 'vokoscreen.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
@@ -119,7 +124,7 @@ apt update
 apt upgrade
 installCurl
 installWget
-apt install fetch -y
+installFetch
 generateSshKey
 apt install git -y
 apt install zsh -y
