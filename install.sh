@@ -98,6 +98,11 @@ installDiscord() {
 	gdebi ./discord.deb
 }
 
+installCurl() {
+	echo "About to install curl"
+	apt install curl -y
+}
+
 updateGnomeDock() {
 	echo "About to add favorite in Gnome Dock"
 	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'thunderbird.desktop', 'slack.desktop', 'code.desktop', 'terminator.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'htop.desktop', 'org.gnome.tweaks.desktop', 'vokoscreen.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
@@ -107,7 +112,7 @@ updateGnomeDock() {
 cd $(echo $(mktemp -d))
 apt update
 apt upgrade
-apt install curl -y
+installCurl
 apt install wget -y
 apt install fetch -y
 generateSshKey
