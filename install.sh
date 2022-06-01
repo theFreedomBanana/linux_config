@@ -143,6 +143,12 @@ installZsh() {
 	apt install zsh -y
 }
 
+installThunderbird() {
+	echo "About to install Thunderbird"
+	sudo add-apt-repository ppa:Ubuntu-mozilla-daily/ppa
+	sudo apt install thunderbird
+}
+
 updateGnomeDock() {
 	echo "About to add favorite in Gnome Dock"
 	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'thunderbird.desktop', 'slack.desktop', 'code.desktop', 'terminator.desktop', 'Zoom.desktop', 'discord.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'htop.desktop', 'org.gnome.tweaks.desktop', 'vokoscreen.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
@@ -174,4 +180,5 @@ installZoom
 installDiscord
 installVscode
 installVirtualBox
+installThunderbird
 updateGnomeDock
