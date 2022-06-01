@@ -128,6 +128,11 @@ installVokoscreen() {
 	apt-get install -y vokoscreen
 }
 
+installVirtualbox() {
+	echo "About to install VirtualBox"
+	apt install virtualbox virtualbox-ext-pack -y
+}
+
 updateGnomeDock() {
 	echo "About to add favorite in Gnome Dock"
 	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'thunderbird.desktop', 'slack.desktop', 'code.desktop', 'terminator.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'htop.desktop', 'org.gnome.tweaks.desktop', 'vokoscreen.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
@@ -147,7 +152,7 @@ curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
 installSlack
 installVlc
 installVokoscreen
-apt install virtualbox virtualbox-ext-pack -y
+installVirtualbox
 addCustomConfig
 installMatchaThemes
 installFzf
