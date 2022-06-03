@@ -75,6 +75,9 @@ installVscode() {
 installTerminator() {
 	echo "About to install Terminator"
 	apt install terminator -y
+	if [ ! -d "/home/$USER/.config/terminator" ]; then
+		mkdir /home/$USER/.config/terminator
+	fi
 	mv terminator/config ~/.config/terminator/config
 }
 
