@@ -2,8 +2,8 @@
 # UBUNTU CONFIG AUTOMATION
 # ==============================
 
-# Run this script after a fresh Linux install to install all the required tools
-# e.g node, git, aliases, text editor, we browsers, etc...
+# After a fresh Linux install unzip the project archive somewhere in your computer
+# and run this script to install all the required tools (e.g node, git, aliases, text editor, we browsers, etc...)
 
 #!/bin/bash -e
 generateSshKey() {
@@ -18,8 +18,7 @@ generateSshKey() {
 }
 
 addCustomConfig() {
-	echo "About to fetch custom config from github repo"
-	git clone git@github.com:theFreedomBanana/config.git
+	echo "About to copie config files in user root folder"
 	mv .gitconfig ~/
 	mv .commands_and_aliases.sh ~/
 	mv .zshrc ~/
