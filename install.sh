@@ -19,9 +19,9 @@ generateSshKey() {
 
 addCustomConfig() {
 	echo "About to copie config files in user root folder"
-	mv .gitconfig ~/
-	mv .commands_and_aliases.sh ~/
-	mv .zshrc ~/
+	cp ./home/.gitconfig ~/
+	cp ./home/.commands_and_aliases.sh ~/
+	cp ./home/.zshrc ~/
 }
 
 installMatchaThemes() {
