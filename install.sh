@@ -214,7 +214,8 @@ updateGnomeDock() {
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position RIGHT
 }
 
-cd $(echo $(mktemp -d))
+TEMP_FOLDER=$(mktemp -d -p ./)
+cd $TEMP_FOLDER
 sudo apt update
 sudo apt upgrade
 installCurl
@@ -229,7 +230,6 @@ installSlack
 installVlc
 installVokoscreen
 installVirtualbox
-addCustomConfig
 installGnomeTweaks
 installMatchaThemes
 installFzf
@@ -241,4 +241,6 @@ installDiscord
 installVscode
 installVirtualBox
 installThunderbird
+cd ../
+addCustomConfig
 updateGnomeDock
