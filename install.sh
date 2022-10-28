@@ -26,6 +26,8 @@ addCustomConfig() {
 	cp ./home/.gitconfig ~/
 	cp ./home/.commands_and_aliases.sh ~/
 	cp ./home/.zshrc ~/
+	cp ./VSCode/* ~/.config/Code/User
+	cp ./terminator/config ~/.config/terminator/config
 }
 
 installGnomeTweaks() {
