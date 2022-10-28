@@ -210,7 +210,7 @@ updateGnomeDock() {
 	echo "##########################################
 	ADDING FAVORITE IN GNOME DOCK
 	##########################################"
-	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'thunderbird.desktop', 'slack.desktop', 'code.desktop', 'terminator.desktop', 'Zoom.desktop', 'discord.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'htop.desktop', 'org.gnome.tweaks.desktop', 'vokoscreen.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
+	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox_firefox.desktop', 'thunderbird.desktop', 'code.desktop', 'terminator.desktop', 'slack.desktop', 'Zoom.desktop', 'discord.desktop', 'vokoscreenNG.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.tweaks.desktop', 'gnome-system-monitor.desktop' 'yelp.desktop']"
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position RIGHT
 }
 
