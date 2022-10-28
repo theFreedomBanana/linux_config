@@ -28,6 +28,13 @@ addCustomConfig() {
 	cp ./home/.zshrc ~/
 }
 
+installGnomeTweaks() {
+	echo "##########################################
+	INSTALLING GNOME TWEAKS
+	##########################################"
+	sudo apt install gnome-tweaks
+}
+
 installMatchaThemes() {
 	echo "##########################################
 	INSTALLING MATCHA THEME
@@ -215,6 +222,7 @@ installVlc
 installVokoscreen
 installVirtualbox
 addCustomConfig
+installGnomeTweaks
 installMatchaThemes
 installFzf
 installNvm
