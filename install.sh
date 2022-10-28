@@ -43,7 +43,7 @@ installMatchaThemes() {
 	##########################################"
 	sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y
 	git clone https://github.com/vinceliuice/matcha.git
-	./install.sh
+	./matcha/install.sh
 }
 
 installFzf() {
@@ -51,8 +51,7 @@ installFzf() {
 	INSTALLING FZF
 	##########################################"
 	git clone --depth 1 https://github.com/junegunn/fzf.git
-	cd ~/.fzf/
-	./install
+	./fzf/install
 }
 
 installNvm() {
