@@ -7,7 +7,9 @@
 
 #!/bin/bash -e
 generateSshKey() {
-	echo "About to generate SSH key"
+	echo "##########################################
+	GENERATING SSH KEY
+	##########################################"
 	ssh-keygen -t rsa -b 4096
 	echo "A new SSH key pair has been added to ${HOME}/.ssh/id_rsa. Add it to your github profile."
 	echo "Enter 'y' when it's done:"
@@ -18,40 +20,52 @@ generateSshKey() {
 }
 
 addCustomConfig() {
-	echo "About to copie config files in user root folder"
+	echo "##########################################
+	COPYING CONFIG FILES IN USER HOME FOLDER
+	##########################################"
 	cp ./home/.gitconfig ~/
 	cp ./home/.commands_and_aliases.sh ~/
 	cp ./home/.zshrc ~/
 }
 
 installMatchaThemes() {
-	echo "About to install Matcha theme"
+	echo "##########################################
+	INSTALLING MATCHA THEME
+	##########################################"
 	apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y
 	git clone https://github.com/vinceliuice/matcha.git
 	./install.sh
 }
 
 installFzf() {
-	echo "About to install FZF"
+	echo "##########################################
+	INSTALLING FZF
+	##########################################"
 	git clone --depth 1 https://github.com/junegunn/fzf.git
 	cd ~/.fzf/
 	./install
 }
 
 installNvm() {
-	echo "About to install NVM"
+	echo "##########################################
+	INSTALLING NVM
+	##########################################"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 	nvm install --lts
 }
 
 installNgrok() {
-	echo "About to install Ngrok"
+	echo "##########################################
+	INSTALLING NGROK
+	##########################################"
 	tar xvzf ~/Downloads/ngrok-stable-linux-amd64.tgz -C /usr/local/bin
 	curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | tee /etc/apt/sources.list.d/ngrok.list && apt update && apt install ngrok
 }
 
 installVscode() {
-	echo "About to install VSCode and extensions"
+	echo "##########################################
+	INSTALLING VSCODE AND EXTENSIONS
+	##########################################"
 	apt install -y software-properties-common apt-transport-https wget
 	wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add -
 	add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
@@ -73,7 +87,9 @@ installVscode() {
 }
 
 installTerminator() {
-	echo "About to install Terminator"
+	echo "##########################################
+	INSTALLING TERMINATOR
+	##########################################"
 	apt install terminator -y
 	if [ ! -d "/home/$USER/.config/terminator" ]; then
 		mkdir /home/$USER/.config/terminator
@@ -82,77 +98,105 @@ installTerminator() {
 }
 
 installChrome() {
-	echo "About to install Chrome"
+	echo "##########################################
+	INSTALLING CHROME
+	##########################################"
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	dpkg -i google-chrome-stable_current_amd64.deb
 }
 
 installZoom() {
-	echo "About to install Zoom"
+	echo "##########################################
+	INSTALLING ZOOM
+	##########################################"
 	wget https://zoom.us/client/latest/zoom_amd64.deb
 	apt install ./zoom_amd64.deb -y
 }
 
 installDiscord() {
-	echo "About to install Discord"
+	echo "##########################################
+	INSTALLING DISCORD
+	##########################################"
 	apt install gdebi-core wget
 	wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
 	gdebi ./discord.deb
 }
 
 installCurl() {
-	echo "About to install curl"
+	echo "##########################################
+	INSTALLING CURL
+	##########################################"
 	apt install curl -y
 }
 
 installWget() {
-	echo "About to install wget"
+	echo "##########################################
+	INSTALLING WGET
+	##########################################"
 	apt install wget -y
 }
 
 installFetch() {
-	echo "About to install fetch"
+	echo "##########################################
+	INSTALLING FETCH
+	##########################################"
 	apt install fetch -y
 }
 
 installSlack() {
-	echo "About to install Slack"
+	echo "##########################################
+	INSTALLING SLACK
+	##########################################"
 	apt-get install slack -y
 }
 
 installVlc() {
-	echo "About to install VLC"
+	echo "##########################################
+	INSTALLING VLC
+	##########################################"
 	apt install vlc -y
 }
 
 installVokoscreen() {
-	echo "About to install Vokoscreen"
+	echo "##########################################
+	INSTALLING VOKOSCREEN
+	##########################################"
 	apt-get install -y vokoscreen
 }
 
 installVirtualbox() {
-	echo "About to install VirtualBox"
+	echo "##########################################
+	INSTALLING VIRTUALBOX
+	##########################################"
 	apt install virtualbox virtualbox-ext-pack -y
 }
 
 installGit() {
-	echo "About to install git"
+	echo "##########################################
+	INSTALLING GIT
+	##########################################"
 	apt install git -y
 }
 
 installZsh() {
-	echo "About to install zsh"
+	echo "##########################################
+	INSTALLING ZSH
+	##########################################"
 	apt install zsh -y
 }
 
 installThunderbird() {
-	echo "About to install Thunderbird"
+	echo "##########################################
+	INSTALLING THUNDERBIRD
+	##########################################"
 	sudo add-apt-repository ppa:Ubuntu-mozilla-daily/ppa
 	sudo apt install thunderbird
 }
 
 updateGnomeDock() {
-	echo "About to add favorite in Gnome Dock"
+	echo "##########################################
+	ADDING FAVORITE IN GNOME DOCK
+	##########################################"
 	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'thunderbird.desktop', 'slack.desktop', 'code.desktop', 'terminator.desktop', 'Zoom.desktop', 'discord.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor_gnome-system-monitor.desktop', 'htop.desktop', 'org.gnome.tweaks.desktop', 'vokoscreen.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position RIGHT
 }
