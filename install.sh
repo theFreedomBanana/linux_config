@@ -32,7 +32,7 @@ installMatchaThemes() {
 	echo "##########################################
 	INSTALLING MATCHA THEME
 	##########################################"
-	apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y
+	sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y
 	git clone https://github.com/vinceliuice/matcha.git
 	./install.sh
 }
@@ -59,17 +59,17 @@ installNgrok() {
 	INSTALLING NGROK
 	##########################################"
 	tar xvzf ~/Downloads/ngrok-stable-linux-amd64.tgz -C /usr/local/bin
-	curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | tee /etc/apt/sources.list.d/ngrok.list && apt update && apt install ngrok
+	curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | tee /etc/apt/sources.list.d/ngrok.list && apt update && sudo apt install ngrok
 }
 
 installVscode() {
 	echo "##########################################
 	INSTALLING VSCODE AND EXTENSIONS
 	##########################################"
-	apt install -y software-properties-common apt-transport-https wget
+	sudo apt install -y software-properties-common apt-transport-https wget
 	wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add -
 	add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-	apt install code -y
+	sudo apt install code -y
 	code --install-extension zhuangtongfa.material-theme
 	code --install-extension atlassian.atlascode
 	code --install-extension byCedric.vscode-expo
@@ -83,18 +83,16 @@ installVscode() {
 	code --install-extension msjsdiag.vscode-react-native
 	code --install-extension Silvenga.positions
 	code --install-extension YoshinoriN.current-file-path
-	mv ./VSCode/* ~/.config/Code/User
 }
 
 installTerminator() {
 	echo "##########################################
 	INSTALLING TERMINATOR
 	##########################################"
-	apt install terminator -y
+	sudo apt install terminator -y
 	if [ ! -d "/home/$USER/.config/terminator" ]; then
 		mkdir /home/$USER/.config/terminator
 	fi
-	mv terminator/config ~/.config/terminator/config
 }
 
 installChrome() {
@@ -110,14 +108,14 @@ installZoom() {
 	INSTALLING ZOOM
 	##########################################"
 	wget https://zoom.us/client/latest/zoom_amd64.deb
-	apt install ./zoom_amd64.deb -y
+	sudo apt install ./zoom_amd64.deb -y
 }
 
 installDiscord() {
 	echo "##########################################
 	INSTALLING DISCORD
 	##########################################"
-	apt install gdebi-core wget
+	sudo apt install gdebi-core wget
 	wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
 	gdebi ./discord.deb
 }
@@ -126,63 +124,63 @@ installCurl() {
 	echo "##########################################
 	INSTALLING CURL
 	##########################################"
-	apt install curl -y
+	sudo apt install curl -y
 }
 
 installWget() {
 	echo "##########################################
 	INSTALLING WGET
 	##########################################"
-	apt install wget -y
+	sudo apt install wget -y
 }
 
 installFetch() {
 	echo "##########################################
 	INSTALLING FETCH
 	##########################################"
-	apt install fetch -y
+	sudo apt install fetch -y
 }
 
 installSlack() {
 	echo "##########################################
 	INSTALLING SLACK
 	##########################################"
-	apt-get install slack -y
+	sudo apt-get install slack -y
 }
 
 installVlc() {
 	echo "##########################################
 	INSTALLING VLC
 	##########################################"
-	apt install vlc -y
+	sudo apt install vlc -y
 }
 
 installVokoscreen() {
 	echo "##########################################
 	INSTALLING VOKOSCREEN
 	##########################################"
-	apt-get install -y vokoscreen
+	sudo apt-get install -y vokoscreen
 }
 
 installVirtualbox() {
 	echo "##########################################
 	INSTALLING VIRTUALBOX
 	##########################################"
-	apt install virtualbox virtualbox-ext-pack -y
+	sudo apt install virtualbox virtualbox-ext-pack -y
 }
 
 installGit() {
 	echo "##########################################
 	INSTALLING GIT
 	##########################################"
-	apt install git -y
+	sudo apt install git -y
 }
 
 installZsh() {
 	echo "##########################################
 	INSTALLING ZSH
 	##########################################"
-	apt install zsh -y
+	sudo apt install zsh -y
 }
 
 installThunderbird() {
@@ -202,8 +200,8 @@ updateGnomeDock() {
 }
 
 cd $(echo $(mktemp -d))
-apt update
-apt upgrade
+sudo apt update
+sudo apt upgrade
 installCurl
 installWget
 installFetch
