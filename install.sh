@@ -190,6 +190,13 @@ installZsh() {
 	sudo apt install zsh -y
 }
 
+installOhMyZsh() {
+	echo "##########################################
+	INSTALLING OH MY ZSH
+	##########################################"
+	curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+}
+
 installThunderbird() {
 	echo "##########################################
 	INSTALLING THUNDERBIRD
@@ -215,7 +222,7 @@ installFetch
 generateSshKey
 installGit
 installZsh
-curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+installOhMyZsh
 installTerminator
 installSlack
 installVlc
