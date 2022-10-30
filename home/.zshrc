@@ -100,7 +100,7 @@ export DOCKER_HOST=tcp://localhost:4243
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #aliases
-source ./commands_and_aliases.sh
+source ./.commands_and_aliases.sh
 
 # Add line numbers to Pygmentize output (Perl script)
 cat() {
