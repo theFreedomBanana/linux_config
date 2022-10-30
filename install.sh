@@ -142,13 +142,6 @@ INSTALLING WGET
 	sudo apt install wget -y
 }
 
-installFetch() {
-	echo "##########################################
-INSTALLING FETCH
-##########################################"
-	sudo apt install fetch -y
-}
-
 installSlack() {
 	echo "##########################################
 INSTALLING SLACK
@@ -220,7 +213,6 @@ sudo apt update
 sudo apt upgrade
 installCurl
 installWget
-installFetch
 generateSshKey
 installGit
 installZsh
