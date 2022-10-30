@@ -207,6 +207,14 @@ ADDING FAVORITE IN GNOME DOCK
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position RIGHT
 }
 
+updateTheme() {
+	echo "##########################################
+UPDATING THEME
+##########################################"
+	gsettings set org.gnome.desktop.interface gtk-theme "Matcha-dark-sea"
+	gsettings set org.gnome.desktop.interface icon-theme 'Yaru-dark'
+}
+
 TEMP_FOLDER=$(mktemp -d -p ./)
 cd $TEMP_FOLDER
 sudo apt update
@@ -236,3 +244,4 @@ installThunderbird
 cd ../
 addCustomConfig
 updateGnomeDock
+updateTheme
