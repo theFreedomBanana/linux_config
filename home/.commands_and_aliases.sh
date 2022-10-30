@@ -40,6 +40,7 @@
 # apt remove: remove related packages but keep configuration or data files
 # apt purge: remove about everything related to the package
 # apt autoremove: remove dependencies installed with other apps and no longer used
+# dpkg -i: install a Debian package (apt is a front-end for dpkg, aka Debian Package)
 
 # ====================
 # USERS
