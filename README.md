@@ -10,6 +10,7 @@ Following, the list of installed software by alphabetical order:
 - Git
 - Google Chrome
 - NgRok
+- Nord VPN
 - Nvm
 - Slack
 - Terminator
