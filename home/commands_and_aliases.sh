@@ -66,6 +66,7 @@
 # uptime: tells how long the system has been running
 # snap list: outputs every snap package
 # time: run programs and summarize system resource usage
+# neofetch: display informations about the system
 
 # ====================
 # NETWORK
