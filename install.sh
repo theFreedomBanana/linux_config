@@ -199,6 +199,13 @@ INSTALLING THUNDERBIRD
 	sudo apt install thunderbird
 }
 
+installNordVPN() {
+	echo "##########################################
+INSTALLING NORD VPN
+##########################################"
+sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+}
+
 updateGnomeDock() {
 	echo "##########################################
 ADDING FAVORITE IN GNOME DOCK
@@ -241,6 +248,7 @@ installDiscord
 installVscode
 installVirtualBox
 installThunderbird
+installNordVPN
 cd ../
 addCustomConfig
 updateGnomeDock
