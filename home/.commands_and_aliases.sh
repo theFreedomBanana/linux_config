@@ -39,7 +39,7 @@
 # apt-get upgrade: install newer version of packages
 # apt remove: remove related packages but keep configuration or data files
 # apt purge: remove about everything related to the package
-# apt autoremove: remvove dependencies installed with other apps and no longer used
+# apt autoremove: remove dependencies installed with other apps and no longer used
 
 # ====================
 # USERS
