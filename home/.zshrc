@@ -95,8 +95,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export DOCKER_HOST=tcp://localhost:4243
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #aliases
@@ -109,8 +107,6 @@ pygmentize -g $1 | perl -e 'print ++$i." $_" for <>'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-export ANDROID_SDK=/home/ben/Android/Sdk
 
 # NVM config
 export NVM_DIR="$HOME/.nvm"
