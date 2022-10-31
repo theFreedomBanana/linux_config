@@ -86,6 +86,7 @@
 # sed: stream editor for filtering and transforming text
 # >: rewrite the argument file with the output of the previous command
 # >>: write at the end of the argument file with the output of the previous command
+# chsh: change the user login shell
 
 # ====================
 # ALIASES
