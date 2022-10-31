@@ -189,6 +189,7 @@ installOhMyZsh() {
 INSTALLING OH MY ZSH
 ##########################################"
 	curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
 }
 
 installThunderbird() {
@@ -204,6 +205,13 @@ installNordVPN() {
 INSTALLING NORD VPN
 ##########################################"
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+}
+
+installPythonPygment() {
+	echo "##########################################
+INSTALLING PYTHON PYGMENTS
+##########################################"
+	sudo apt install python3-pygments
 }
 
 updateGnomeDock() {
