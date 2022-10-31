@@ -230,6 +230,10 @@ UPDATING THEME
 	gsettings set org.gnome.desktop.interface icon-theme 'Yaru-dark'
 }
 
+makeZshDefaultShell() {
+	chsh -s $(which zsh)
+}
+
 TEMP_FOLDER=$(mktemp -d -p ./)
 cd $TEMP_FOLDER
 sudo apt update
@@ -261,3 +265,4 @@ cd ../
 addCustomConfig
 updateGnomeDock
 updateTheme
+makeZshDefaultShell
