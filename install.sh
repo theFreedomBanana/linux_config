@@ -142,13 +142,6 @@ INSTALLING WGET
 	sudo apt install wget -y
 }
 
-installSlack() {
-	echo "##########################################
-INSTALLING SLACK
-##########################################"
-	sudo apt-get install slack -y
-}
-
 installVlc() {
 	echo "##########################################
 INSTALLING VLC
@@ -218,7 +211,7 @@ updateGnomeDock() {
 	echo "##########################################
 ADDING FAVORITE IN GNOME DOCK
 ##########################################"
-	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox_firefox.desktop', 'thunderbird.desktop', 'code.desktop', 'terminator.desktop', 'slack.desktop', 'Zoom.desktop', 'discord.desktop', 'vokoscreenNG.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.tweaks.desktop', 'gnome-system-monitor.desktop', 'yelp.desktop']"
+	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox_firefox.desktop', 'thunderbird.desktop', 'code.desktop', 'terminator.desktop', 'Zoom.desktop', 'discord.desktop', 'vokoscreenNG.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.tweaks.desktop', 'gnome-system-monitor.desktop', 'yelp.desktop']"
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position RIGHT
 }
 
@@ -245,7 +238,6 @@ installGit
 installZsh
 installOhMyZsh
 installTerminator
-installSlack
 installVlc
 installVokoscreen
 installVirtualbox
