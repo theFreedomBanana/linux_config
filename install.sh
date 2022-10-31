@@ -266,3 +266,4 @@ addCustomConfig
 updateGnomeDock
 updateTheme
 makeZshDefaultShell
+rm -R $TEMP_FOLDER
