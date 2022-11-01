@@ -3,6 +3,9 @@
     "files.insertFinalNewline": true,
     "editor.fontSize": 16,
     "editor.tabSize": 2,
+		"files.exclude": {
+			"**/.git": false
+		},
     "files.trimTrailingWhitespace": true,
 		"editor.formatOnPaste": true,
 		"editor.snippetSuggestions": "top",
@@ -13,7 +16,7 @@
 		"explorer.autoReveal": false,
 		"workbench.sideBar.location": "right",
 		"javascript.validate.enable": false,
-		"oneDarkPro.editorTheme": "Onedark Pro",
+		"oneDarkPro.editorTheme": "One Dark Pro",
 		"eslint.alwaysShowStatus": true,
 		"files.autoSave": "off",
 		"atlascode.jira.enabled": true,
