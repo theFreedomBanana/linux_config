@@ -84,6 +84,7 @@
 # date: outputs the date
 # sleep: sleep execution for "x" seconds, "x" being the argument
 # sed: stream editor for filtering and transforming text
+# <: read in from standard input
 # >: rewrite the argument file with the output of the previous command
 # >>: write at the end of the argument file with the output of the previous command
 # chsh: change the user login shell
