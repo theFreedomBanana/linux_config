@@ -196,7 +196,7 @@ installNordVPN() {
 	echo "##########################################
 INSTALLING NORD VPN
 ##########################################"
-sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+sudo apt install nordvpn
 }
 
 installPythonPygment() {
