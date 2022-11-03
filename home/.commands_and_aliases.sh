@@ -41,6 +41,7 @@
 # apt purge: remove about everything related to the package
 # apt autoremove: remove dependencies installed with other apps and no longer used
 # dpkg -i: install a Debian package (apt is a front-end for dpkg, aka Debian Package)
+# snap: the snap command lets you install, configure, and remove snaps packages.
 
 # ====================
 # USERS
