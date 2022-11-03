@@ -213,11 +213,22 @@ INSTALLING NODE
 	nvm install --lts
 }
 
+installFirefox() {
+	echo "##########################################
+INSTALLING FIREFOX
+##########################################"
+	sudo snap remove firefox
+	sudo add-apt-repository ppa:mozillateam/ppa
+	echo 'Package: firefox Pin: release o=LP-PPA-mozillateam Pin-Priority: 1001' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+	echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
+	sudo apt install firefox
+}
+
 updateGnomeDock() {
 	echo "##########################################
 ADDING FAVORITE IN GNOME DOCK
 ##########################################"
-	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox_firefox.desktop', 'thunderbird.desktop', 'code.desktop', 'terminator.desktop', 'Zoom.desktop', 'discord.desktop', 'vokoscreenNG.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.tweaks.desktop', 'gnome-system-monitor.desktop', 'yelp.desktop']"
+	gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'thunderbird.desktop', 'code.desktop', 'terminator.desktop', 'Zoom.desktop', 'discord.desktop', 'vokoscreenNG.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.tweaks.desktop', 'gnome-system-monitor.desktop', 'yelp.desktop']"
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-position RIGHT
 }
 
@@ -252,6 +263,7 @@ installMatchaThemes
 installFzf
 installNvm
 installNgrok
+installFirefox
 installChrome
 installZoom
 installDiscord
