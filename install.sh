@@ -59,7 +59,6 @@ installNvm() {
 INSTALLING NVM
 ##########################################"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-	nvm install --lts
 }
 
 installNgrok() {
@@ -207,6 +206,13 @@ INSTALLING PYTHON PYGMENTS
 	sudo apt install python3-pygments
 }
 
+installNpm() {
+	echo "##########################################
+INSTALLING NODE
+##########################################"
+	nvm install --lts
+}
+
 updateGnomeDock() {
 	echo "##########################################
 ADDING FAVORITE IN GNOME DOCK
@@ -255,6 +261,7 @@ installThunderbird
 installNordVPN
 cd ../
 addCustomConfig
+installNpm
 updateGnomeDock
 updateTheme
 makeZshDefaultShell
