@@ -124,7 +124,7 @@ INSTALLING DISCORD
 ##########################################"
 	sudo apt install gdebi-core wget
 	wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
-	gdebi ./discord.deb
+	sudo gdebi ./discord.deb
 }
 
 installCurl() {
