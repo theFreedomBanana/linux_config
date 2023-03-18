@@ -270,6 +270,7 @@ installVscode
 installVirtualBox
 installThunderbird
 installNordVPN
+installPythonPygment
 cd ../
 addCustomConfig
 installNpm
