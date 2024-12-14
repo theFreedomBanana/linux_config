@@ -294,6 +294,15 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 }
 
+installDMySql() {
+	echo "##########################################
+INSTALLING MYSQL
+##########################################"
+sudo apt install mysql-client mysql-server
+sudo systemctl start mysql
+sudo mysql_secure_installation
+}
+
 makeZshDefaultShell() {
 	chsh -s $(which zsh)
 }
@@ -329,6 +338,7 @@ installNetstat
 installHtop
 installDBeaver
 installDocker
+installDMySql
 cd ../
 addCustomConfig
 installNpm
