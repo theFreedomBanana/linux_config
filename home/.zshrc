@@ -102,10 +102,8 @@ source /usr/share/doc/fzf/examples/completion.zsh
 #aliases
 source ~/.commands_and_aliases.sh
 
-# Add line numbers to Pygmentize output (Perl script)
-cat() {
-pygmentize -g $1 | perl -e 'print ++$i." $_" for <>'
-}
+# Pygmentize 'cat' output and add line numbers
+alias cat='pygmentize -g -O style=gruvbox-dark,linenos=1'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
