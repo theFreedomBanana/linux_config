@@ -263,6 +263,14 @@ INSTALLING HTOP
 sudo apt install htop
 }
 
+installDBeaver() {
+	echo "##########################################
+INSTALLING DBEAVER
+##########################################"
+sudo add-apt-repository ppa:serge-rider/dbeaver-ce
+sudo apt-get install dbeaver-ce
+}
+
 makeZshDefaultShell() {
 	chsh -s $(which zsh)
 }
@@ -296,6 +304,7 @@ installThunderbird
 installNordVPN
 installNetstat
 installHtop
+installDBeaver
 cd ../
 addCustomConfig
 installNpm
