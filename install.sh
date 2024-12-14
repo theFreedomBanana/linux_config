@@ -256,6 +256,13 @@ INSTALLING NETSTAT
 sudo apt install net-tools
 }
 
+installHtop() {
+	echo "##########################################
+INSTALLING HTOP
+##########################################"
+sudo apt install htop
+}
+
 makeZshDefaultShell() {
 	chsh -s $(which zsh)
 }
@@ -288,6 +295,7 @@ installVirtualBox
 installThunderbird
 installNordVPN
 installNetstat
+installHtop
 cd ../
 addCustomConfig
 installNpm
