@@ -249,6 +249,13 @@ UPDATING THEME
 	gsettings set org.gnome.desktop.interface icon-theme 'Yaru-dark'
 }
 
+installNetstat() {
+	echo "##########################################
+INSTALLING NETSTAT
+##########################################"
+sudo apt install net-tools
+}
+
 makeZshDefaultShell() {
 	chsh -s $(which zsh)
 }
@@ -280,6 +287,7 @@ installVscode
 installVirtualBox
 installThunderbird
 installNordVPN
+installNetstat
 cd ../
 addCustomConfig
 installNpm
