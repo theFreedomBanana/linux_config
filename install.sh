@@ -303,6 +303,20 @@ sudo systemctl start mysql
 sudo mysql_secure_installation
 }
 
+installLocalTunnel() {
+  echo "##########################################
+INSTALLING LOCALTUNNEL
+##########################################"
+npm install -g localtunnel
+}
+
+installTmux() {
+  echo "##########################################
+INSTALLING TMUX
+##########################################"
+sudo apt install tmux
+}
+
 makeZshDefaultShell() {
 	chsh -s $(which zsh)
 }
@@ -339,6 +353,8 @@ installHtop
 installDBeaver
 installDocker
 installDMySql
+installLocalTunnel
+installTmux
 cd ../
 addCustomConfig
 installNpm
