@@ -89,6 +89,7 @@ INSTALLING VSCODE AND EXTENSIONS
 	code --install-extension msjsdiag.vscode-react-native
 	code --install-extension Silvenga.positions
 	code --install-extension YoshinoriN.current-file-path
+  code --install-extension echoapi.echoapi-for-vscode
 }
 
 installTerminator() {
