@@ -4,10 +4,12 @@
 # head: output the first lines of the file passed as an argument
 # tail: output the last lines of the file passed as an argument
 # cat: output the content of the file passed as an argument
-# tac: output the content of the file passed as an argument. Unllike the "cat" command "tac" starts from the end
+# tac: output the content of the file passed as an argument. Unlike the "cat" command "tac" starts from the end
 # more: output the content of the file passed as an argument but enables scolling through sections with the space bar
 # less: output the content of the file passed as an argument but enables scolling through the fiel with arrow keys
-# du: outputs every file included in the current folder along with the total size
+# du: stands for Directory Usage. Outputs every folder and recursive folders in the working directory along with the total size
+#     -h for human readable output
+#     -s for a summarize output
 # rmdir: remove directory. Only working with empty directories. If containing files we'll need to use "rm-r"
 # dir: kinda similar to ls. Outputs files.
 # mktemp: create a temporary file or directory
@@ -47,8 +49,10 @@
 # USERS
 # ====================
 # whoami: returns the current user
-# su: become the user passed as parameter
-# users: output names of the existing users on the computer
+# su: Switch User. Switch to another user account (default to root when no argument is given)
+# users: output currently logged in users
+# groups <username>: output group membership for a given user
+# getent: get entries for administrative DB. Can be used to list every user or every group
 # id: outputs a bunch of infos related to the current user
 # chmod: enable to change rights about the argument file [rwx]  [rw-]  [r--]. read equals 4, write equals 2, execute equals 1
 #                                                            ^      ^      ^
@@ -58,8 +62,10 @@
 # SYSTEM & PROCESSORS
 # ====================
 # free: outputs memory usage in the system
-# kill: stop a running process
-# killall: stop all related processes
+# kill: stop a running process using it's PID (Process ID)
+# killall: stop all related processes using  the process name (ex: killall firefox)
+# pkill: will send SIGTERM to all processes matching tha match a given pattern
+#	-9 will send a SIGKILL to processes, shutting them down immediatly (works for kill and killall as well)
 # df: outputs every mount disks
 # lsblk: outputs every mount disks (don't know the difference with 'df')
 # ps: outputs running processes in current shell
@@ -69,6 +75,8 @@
 # snap list: outputs every snap package
 # time: run programs and summarize system resource usage
 # neofetch: display informations about the system
+# usb-devices: print USB device details
+# tty: terminal typewriter. Return a unique identifier for the related terminal or shell
 
 # ====================
 # NETWORK
@@ -88,7 +96,7 @@
 # <: read in from standard input
 # >: rewrite the argument file with the output of the previous command
 # >>: write at the end of the argument file with the output of the previous command
-# chsh: change the user login shell
+# chsh: change the default login shell for the user
 
 # ====================
 # ALIASES
@@ -109,3 +117,5 @@ alias na='nano'
 alias chrome="google-chrome"
 alias pdf='xdg-open'
 alias untar='tar -xvzf'
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
