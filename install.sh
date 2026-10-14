@@ -356,6 +356,7 @@ installDocker
 installDMySql
 installLocalTunnel
 installTmux
+installPythonPygment
 cd ../
 addCustomConfig
 installNpm
