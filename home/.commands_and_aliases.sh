@@ -11,8 +11,14 @@
 #     -h for human readable output
 #     -s for a summarize output
 # rmdir: remove directory. Only working with empty directories. If containing files we'll need to use "rm-r"
-# dir: kinda similar to ls. Outputs files.
+# dir: very similar to ls. An alternative provided mainly for familiarity with users coming from DOS/Windows.
 # mktemp: create a temporary file or directory
+# tee: splits the output in 2 directions, e.g stdin and wherever you want the output to go. This means, `echo foo | tee file.txt` will both be printed in the stdin but also be put in 'file.txt'
+# sed: Stream EDitor. Mostly used to find and replace elements in a file. Ex: `sed 's/old/new/' file.txt`
+# xargs: takes input from stdin and turns it into arguments for another command
+# install: copy a file to a location, while optionally setting its permissions, owner, and group. It's kind of a mix between `cp`, `chmod`, `chown`
+# ln: create linked files
+# awk: a tool to read files filtering rows and performing calculations
 
 # ====================
 # NAVIGATION
@@ -21,7 +27,8 @@
 # popd: navigates to the previous address and so on.
 # locate: finds file argument location on the computer. Uses a database updated once a day. In order to manually update it check the following command
 # sudo updatedb: update locate database
-# dirname: return the current parent's directory address
+# dirname: return the parent's directory of a given address (e.g dirname /home/john/Document => /home/john)
+# chdir: Change directory. Same as `cd`
 
 # ====================
 # SEARCH & HELP
@@ -57,6 +64,11 @@
 # chmod: enable to change rights about the argument file [rwx]  [rw-]  [r--]. read equals 4, write equals 2, execute equals 1
 #                                                            ^      ^      ^
 #                                                           user  group  everyone else
+# who: show every user currently connected to a machine
+# w: same as "who" but gives more details
+# passwd: change a user's password (ex: passwd john)
+# adduser: to add a new user. Another command `useradd` also exists but `adduser` is more friendly
+# usermod: to update a user. For example: `sudo usermod -aP root john`, adds root john user in root group
 
 # ====================
 # SYSTEM & PROCESSORS
@@ -65,9 +77,10 @@
 # kill: stop a running process using it's PID (Process ID)
 # killall: stop all related processes using  the process name (ex: killall firefox)
 # pkill: will send SIGTERM to all processes matching tha match a given pattern
+#        -9 will send a SIGKILL to processes, shutting them down immediatly (works for kill and killall as well)
 #	-9 will send a SIGKILL to processes, shutting them down immediatly (works for kill and killall as well)
-# df: outputs every mount disks
-# lsblk: outputs every mount disks (don't know the difference with 'df')
+# df: Disk Free. Display the mounted file system and how much space they use. Usefull with the `-h` option (human readable)
+# lsblk: LiSt BLocK. Display blocks (includes drives and virtual blocks), mounted and unmounted
 # ps: outputs running processes in current shell
 # top: outputs running processes on the computer
 # htop: better looking "top"
@@ -77,12 +90,31 @@
 # neofetch: display informations about the system
 # usb-devices: print USB device details
 # tty: terminal typewriter. Return a unique identifier for the related terminal or shell
+# lsof: list every open files with the address, the name of the related application, the user, the PID
+# mkfs: MaKe File System. Creates superblocks, inodes, bitmaps, in order for a drive to be mounted. Used automatically, I don't think I'll ever need to run it
+# fck: File System Consistency Check. Check and repair file system errors. Don't run it on a mounted file system. You should boot in recovery mode
+# make: a build automation tool. It reads instructions from a file called a Makefile and uses them to build programs, run tests, generate files, or perform other repetitive tasks.
+# hostnamectl: update hostname. ex: sudo hostnamectl set-hostname new-name
+# uname -p: print the type of processor used by the machine (arm, amd)
 
 # ====================
 # NETWORK
 # ====================
 # ifconfig: outputs network interface
-# ip: show or manipulate routing, network devices, interfaces, tunnels
+# ip: a modern ifconfig. Show or manipulate routing, network devices, interfaces, tunnels
+# iptables: iptables is a Linux command-line tool used to configure firewall rules—controlling which network traffic is allowed, blocked, or modified.
+# dig: used for DNS lookup
+# nmap => Network Mapper. A network discovery and security-auditing tool.
+# nc: NetCat. Used for testing network connection and check wether ports are reachable
+# netstat: Show network Sockets. Check open ports and see what network connectivity are running
+# ss: a modern netstat
+
+# ====================
+# SSH
+# ====================
+# ssh-copy-id: copy your SSH public key to a remote server, so you can log in using SSH without entering your password each time
+# ssh-keyscan: used to retrieve the public ssh host key of a server
+# ssh-keygen: used to generate an ssh key
 
 # ====================
 # MISCELLANEOUS
@@ -97,17 +129,54 @@
 # >: rewrite the argument file with the output of the previous command
 # >>: write at the end of the argument file with the output of the previous command
 # chsh: change the default login shell for the user
+# timeout: timeout after a given time
+# sh: execute a shell script
+# set -euo pipefail: Stop when something goes wrong, don't use undefined variables, and don't hide failures inside pipelines
+# journalctl -u nginx: display nginx logs (can also be found in /var/log/nginx/access.log)
+
+# ====================
+# SHELL BUILT-IN
+# ====================
+# printf: a shell built in command to display text. Usually favored over "echo" as it gives more control over formating
+# command: shell built in. Execute a raw command. Bypass aliases
+# type: shell built in. Returns what the shell think of a command. If it's a shell build in will return will say so, otherwise will return the bin location.
+#       If it is an alias it will return the alias iteself
+# whence: a zsh equival of `type` (I feel `type` give more accurate results)
+
+# ====================
+# MAC OS ONLY
+# ====================
+# diskutil list: same as lsblk
+# dscl: MacOS only
+# scutil: System Configuration UTIlities -> Manage system configuration parameters
+# pfctl: the equivalent of iptables
+
+# ====================
+# LINUX ONLY
+# ====================
+## Linux only. On MacOS users are in /Users
+#`cat /etc/passwd`: to see all users
+#`cat /etc/groups`: to see all groups
+#getent: Get Entries. Used to query the system database. For example:
+#        - getent passwd: show users
+#        - getent passwd john: show user john
+#        - getent groups: show groups
+#        - getent hosts: show ...
+#        - getent services: show services
 
 # ====================
 # ALIASES
 # ====================
-alias lsla='ls -la --group-directories-first'
-alias lsl='ls -l --group-directories-first'
+# alias lsla='ls -la --group-directories-first'
+# alias lsl='ls -l --group-directories-first'
 # alias ls='exa -abghHl --group-directories-first'
-alias lsa='ls -a --group-directories-first'
+# alias lsa='ls -a --group-directories-first'
+alias ls='eza -la --group-directories-first'
 alias fzrm='fzf | xargs rm -v'
 alias ff='fzf'
+alias ps='ps -o user,pid,ppid,time,etime,stat,command'
 alias psg='ps aux | grep'
+alias fps='ps -aux'
 alias npr='npm run'
 alias wh='which'
 alias pyg='cat'
@@ -117,5 +186,10 @@ alias na='nano'
 alias chrome="google-chrome"
 alias pdf='xdg-open'
 alias untar='tar -xvzf'
-alias setclip="xclip -selection c"
-alias getclip="xclip -selection c -o"
+alias setclip="xclip -selection c" # On PacOS use pbcopy instead
+alias getclip="xclip -selection c -o" # On MacOS use pbpaste instead
+alias dirsize='eza -lD --total-size'
+alias yaz=yazi
+alias files=yazi
+alias img=viu
+alias md=mdfried
